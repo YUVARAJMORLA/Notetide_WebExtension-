@@ -1,6 +1,6 @@
 # Notetide_WebExtension
 
-Study Helper Web Extension
+Notetide(Study Helper) Web Extension
 This web extension is designed to assist students in their study routine by providing essential features like sticky notes and a customizable timer. It enables users to store important information, set alerts, and manage their study time effectively.
 
 
