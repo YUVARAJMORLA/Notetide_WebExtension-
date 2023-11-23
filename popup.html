@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sticky Notes & Timer</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your custom CSS styles here */
+        /* Apply styles to the container */
+        .container {
+            margin: 10px auto;
+            width: 300px;
+            /* Adjust the width as needed */
+            height: auto;
+        }
+
+
+        /* Style the sticky note textarea */
+        #stickyNote {
+            width: 100%;
+            /* Make the textarea width full */
+            padding: 10px;
+            margin-bottom: 10px;
+            /* Increase bottom margin */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            /* Allow vertical resizing */
+        }
+
+        /* Style the timer input and select */
+        #timerInput,
+        #timeUnit {
+            width: calc(30% - 5px);
+            /* Adjust width and space */
+            margin-right: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Style the buttons */
+        .btn-group {
+            margin-bottom: 10px;
+        }
+
+        /* Style the start timer button */
+        #startTimer,
+        #resumeTimer,
+        #resetTimer {
+            padding: 5px 10px;
+            /* Adjust button padding */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-top: 12px;
+            /* Reduce right margin */
+        }
+
+        /* Style the timer display */
+        #timerDisplay {
+            margin-top: 0px;
+            /* Adjust top margin */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* CSS for navigation and content sections */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: rgb(95, 95, 212);
+        }
+
+        .navigation-text {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(253, 242, 30);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <span id="showStickyNotesButton" class="navigation-text active">| Sticky Notes |</span>
+            <span id="showTimerButton" class="navigation-text">| Timer |</span>
+        </div>
+
+
+        <div id="stickySection" class="content-section active">
+            <h4>Sticky Notes</h4>
+            <!-- Sticky note interface with buttons -->
+            <textarea id="stickyNote" rows="4" cols="50" placeholder="Write your note here..."></textarea>
+            <div class="btn-group">
+                <button id="saveNote" class="btn btn-primary">Save</button>
+                <button id="deleteNote" class="btn btn-danger">Delete</button>
+                <button id="undoNote" class="btn btn-secondary">Undo</button>
+            </div>
+        </div>
+        <!-- Timer Section -->
+        <div id="timerSection" class="content-section">
+            <h4>Timer</h4>
+            <input type="number" id="timerInput" placeholder="Set time">
+            <select id="timeUnit">
+                <option value="seconds">Seconds</option>
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+            </select>
+            <div class="btn-group">
+                <button id="startTimer" class="btn btn-success">Start</button>
+                <button id="resumeTimer" class="btn btn-warning">Resume</button>
+                <button id="resetTimer" class="btn btn-danger">Reset</button>
+            </div>
+            <div id="timerDisplay"></div>
+        </div>
+    </div>
+    <!-- Include your JavaScript -->
+    <script src="popup.js"></script>
+</body>
+
+</html>
